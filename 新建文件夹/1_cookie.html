@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <title>标题</title>
+    <meta charset="utf-8">
+    <script>
+      function setCookie(name,value){
+        var now=new Date();
+        now.setMonth(now.getMonth()+1);
+        document.cookie=
+          name+"="+value+";expires="
+          +now.toGMTString();
+      }
+     //getCookie:根据cookie名返回变量的值
+      function getCookie(name){
+        var cookies=
+          document.cookie.split("; ");
+        for(var i=0;i<cookies.length;i++){
+          if(cookies[i].startsWith(name)){
+           return cookies[i].split("=")[1]
+          }
+        }
+      }
+      var uname=getCookie("username");
+      //如果有username的cookie
+      if(uname!==undefined){
+        //就提示欢迎xxxx
+        document.write("<br>"+
+          "欢迎 "+uname
+          +";您的最高分是"
+          +getCookie("top"));
+      }else{//否则
+        //打开显示cookie，看过期时间
+        //关闭浏览器，再打开空页面，再显示cookie
+        var now=new Date();
+        now.setDate(now.getDate()+7);
+        document.cookie=
+          "username=zhangdong;expires="
+          +now.toGMTString();
+        document.cookie=
+          "top=1234;expires="
+          +now.toGMTString();
+        document.write("<br>"+
+          "新建用户zhangdong");
+      }
+    </script>
+  </head>
+  <body>
+    
+  </body>
+</html>

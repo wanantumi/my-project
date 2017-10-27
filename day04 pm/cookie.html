@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    
+  </style>
+ </head>
+ <body>
+  <script>
+    function setCookie(cname,val){
+      var date=new Date();
+      date.setDate(date.getDate()+14);
+      document.cookie=
+        cname+"="+val+";expires="
+        +date.toGMTString();
+    }
+    setCookie("username","zhangdong");
+  //Firefox: 选项->隐私->历史xx->使用自定义xx->显示cookie
+  </script>
+ </body>
+</html>

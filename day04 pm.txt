@@ -1,0 +1,46 @@
+正课:
+1.cookie:
+ what: 在客户端本地，持久存储用户私密数据的文件.
+ why: 内存中一切数据都是临时的
+ when: 只要在客户端本地，持久存储用户的私密数据
+ how: 
+  写入cookie：
+    document.cookie=
+       "变量名=值;expires="
+       	+date.toGMTString()
+  读取cookie的数据: 
+    var str=document.cookie;
+    
+
+  练习: 
+   Chrome不允许本地的网页创建cookie
+   Firefox允许
+
+2.严格模式:
+  比普通的js运行模式，要求更严格的执行环境。
+  何时启用: 
+    旧项目: 逐个功能启用严格模式
+    新项目: 开始就启用严格模式
+  如何启用:
+    "use strict";
+    2种地方:
+    1. <script>标签的开头
+       整个script中的所有代码启用严格模式
+    2. function的开头
+       仅当前函数内的代码启用严格模式
+  严格模式:
+   1. 静默失败升级为错误
+   2. 不允许对未声明的变量赋值！
+   3. arguments少用
+       arguments.callee ->指代当前正在调用的函数本身——专用于递归调用
+   4. 增加了eval作用域:
+      eval中声明的变量，eval外不能使用
+
+
+
+
+
+
+
+
+

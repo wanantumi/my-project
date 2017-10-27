@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+  
+  </style>
+ </head>
+ <body>
+  <script>
+    function setCookie(cname,val){
+      var date=new Date();
+      date.setDate(date.getDate()+14);
+      document.cookie=
+        cname+"="+val+";expires="
+        +date.toGMTString();
+    }
+    function getCookie(cname){
+      var str=document.cookie;
+      //在str中查找cname的位置i
+      var i=str.indexOf(cname);
+      if(i!=-1){//如果i!=-1
+        //i+cname的字符个数+1
+        i=i+cname.length+1;
+        //查找str中i之后下一个;的位置endi
+        var endi=str.indexOf(";",i);
+        //返回: 截取str中i到endi的子字符串
+        return str.slice(
+          i,endi!=-1?endi:str.length
+        );
+      }
+    }
+    console.log(
+      getCookie("username"),//zhangdong
+      getCookie("top")//undefined
+    );
+  </script>
+ </body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<title> new document </title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<script>
+			function setCookie(cname,val){
+				var date=new Date();
+				date.setDate(date.getDate()+14);
+				document.cookie=cname+"="+val+
+					";expires="+date.toGMTString();
+			}
+			setCookie("username","zhangdong");
+		</script>	
+	</body>
+</html>

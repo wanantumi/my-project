@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+	<head>
+		<title> new document </title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<script>
+			function getCookie(cname){
+				var str=document.cookie;
+				//在str中查找cname的位置i
+				var i=str.indexOf(cname);
+				//如果i!=-1
+				if(i!=-1){
+					//i+cname的字符个数+1
+					i+=cname.length+1;
+					//查找str中i之后下一个;的位置endi
+					var endi=str.indexOf(";",i);
+					//返回：截取str中i到endi的字符串
+					return str.slice(i,endi!=-1?endi:str.length);
+				}
+			}
+			console.log(
+				getCookie("username"),
+				getCookie("top")
+			);
+		</script>
+	</body>
+</html>
